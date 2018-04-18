@@ -1,0 +1,14 @@
+<h1> Top 10 Ice Cream's Tweeted About </h1>
+
+<form>
+  <input type="button" value="Go back to home page!" onclick="history.back()">
+</form>
+
+<form action='/tweets' method = 'POST'>
+
+{% for i,n in tweets %}
+  <tr>
+    <td><img src = {{i}} height = '190' width = '190' alt = 'text'/>
+    <td>{{n}}
+  </tr>
+{% endfor %}

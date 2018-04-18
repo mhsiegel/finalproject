@@ -1,0 +1,13 @@
+<h1> These Ice Creams contain {{flavor}}: </h1>
+
+<form>
+  <input type="button" value="Go back to home page!" onclick="history.back()"/>
+</form>
+
+<form action='/postflavor' method = 'POST'>
+
+{% for n,i in contain_flavor %}
+  <ul>
+    <h4>{{n}}: </h4> {{i}}
+  </ul>
+{% endfor %}

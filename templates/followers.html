@@ -1,0 +1,13 @@
+<h1> Top 10 Followers and the Ice Cream they Tweeted About </h1>
+
+<form>
+  <input type="button" value="Go back to home page!" onclick="history.back()">
+</form>
+
+<form action='/tweets' method = 'POST'>
+
+<ol>
+{% for n,f,i in followers %}
+  <li>{{n}} with {{f}} followers tweeted about <img src = {{i}} height = '150' width = '145' alt = 'text'/></li>
+{% endfor %}
+</ol>

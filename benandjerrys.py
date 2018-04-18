@@ -83,8 +83,6 @@ def get_tweets(icecream_name):
     searched_tweets = [status for status in tweepy.Cursor(api.search, q=icecream_name).items(1000)]
     return searched_tweets
 
-#PLOTLY ice cream ingredient, 10 most frequent words,
-
 DBNAME = 'benandjerrys.db'
 def init_db():
     try:
@@ -120,9 +118,9 @@ def init_db():
             'TweetId' INTEGER PRIMARY KEY AUTOINCREMENT,
             'UserId' TEXT,
             'ScreenName' TEXT,
-            'FollowerCount' REAL,
+            'FollowerCount' INTEGER,
             'TweetText' TEXT,
-            'NumRetweets',
+            'NumRetweets' INTEGER,
             'FlavorId' INTEGER
         );
     '''
@@ -143,7 +141,6 @@ def insert_icecream_data():
         conn.commit()
         tweet_num+=1
     conn.close()
-    print('Fetched', str(tweet_num), 'tweets')
 
 def insert_tweet_data(tweets):
     flavors = icecreamflavors()
@@ -162,8 +159,7 @@ def insert_tweet_data(tweets):
 if __name__ == '__main__':
     init_db()
     insert_icecream_data()
-    icecream_name = input("Enter search term: ")
+    # icecream_name = input("Enter twitter name with '@': ")
+    icecream_name = "@benandjerrys"
     tweets = get_tweets(icecream_name)
     insert_tweet_data(tweets)
-
-#table show top 10 flavors chocolate, vanilla, etc.

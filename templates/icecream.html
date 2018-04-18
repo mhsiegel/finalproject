@@ -1,0 +1,19 @@
+<h1> Ice Cream Flavors with Description and Picture </h1>
+
+<form>
+  <input type="button" value="Go back to home page!" onclick="history.back()">
+</form>
+
+<form action='/icecream' method = 'POST'>
+
+{% for n,d,i in icecream %}
+  <ul>
+    <center>
+      <h2>{{n}}</h2>
+      <img src = {{i}} height = '190' width = '190' alt = 'text'/>
+      <body>
+        <p>{{d}}</p>
+      </body>
+    </center>
+  </ul>
+{% endfor %}
