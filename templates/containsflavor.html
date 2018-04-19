@@ -1,13 +1,18 @@
 <h1> These Ice Creams contain {{flavor}}: </h1>
 
-<form>
-  <input type="button" value="Go back to home page!" onclick="history.back()"/>
+<form action = "/">
+  <input type="submit" value="Go back to home page!"</a>
+</form>
+
+<form action = "/add">
+  <input type="submit" value="Go back to pick a new flavor"</a>
 </form>
 
 <form action='/postflavor' method = 'POST'>
 
-{% for n,i in contain_flavor %}
+{% for n,i,p in contain_flavor %}
   <ul>
-    <h4>{{n}}: </h4> {{i}}
+    <td><img src = {{p}} height = '150' width = '145' alt = 'text'/></td>
+    <td><h4>{{n}}: </h4> {{i}}</td>
   </ul>
 {% endfor %}

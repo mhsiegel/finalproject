@@ -76,11 +76,11 @@ def icecreamflavors():
         list_of_icecreams.append(createlist)
     return list_of_icecreams
 
-def get_tweets(icecream_name):
+def get_tweets():
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     api = tweepy.API(auth)
-    searched_tweets = [status for status in tweepy.Cursor(api.search, q=icecream_name).items(1000)]
+    searched_tweets = [status for status in tweepy.Cursor(api.search, q='@benandjerrys').items(1000)]
     return searched_tweets
 
 DBNAME = 'benandjerrys.db'
@@ -160,6 +160,6 @@ if __name__ == '__main__':
     init_db()
     insert_icecream_data()
     # icecream_name = input("Enter twitter name with '@': ")
-    icecream_name = "@benandjerrys"
-    tweets = get_tweets(icecream_name)
+    # accountname = "@benandjerrys"
+    tweets = get_tweets()
     insert_tweet_data(tweets)
