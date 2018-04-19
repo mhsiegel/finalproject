@@ -84,16 +84,17 @@ class TestDataBase(unittest.TestCase):
         self.assertEqual((result_list), 'Chocolate Chip Cookie Dough')
         conn.close()
 
-# class TestTweepy(unittest.TestCase):
-#     def testtweepy(self):
-#         t1 = get_tweets()
-#         # print(t1)
-#         self.assertEqual(t1.user.id, 973258148105543680)
-#         # ex. chunky test has 442 followers
+class TestTweepy(unittest.TestCase):
+    def testtweepy(self):
+        t1 = get_tweets()
+        # t2 = get_tweets()
+
+        self.assertEqual(type(t1), list)
+        # self.assertIn(t2[0]['text'], '@benandjerrys')
 
 # class TestFlask(unittest.TestCase):
-    # def setUp(self):
-        # self.
+#     db = benandjerrys.db
+#     f = db.
 
 if __name__ == '__main__':
     unittest.main()
