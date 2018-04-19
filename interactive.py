@@ -81,10 +81,4 @@ def postflavor():
     return render_template('containsflavor.html', contain_flavor = contain_flavor, flavor = flavor)
 
 if __name__ == '__main__':
-    # init_db()
-    # insert_icecream_data()
-    # get_tweets(input("Enter twitter name with '@': "))
-    # # icecream_name = "@benandjerrys"
-    # # tweets = get_tweets(icecream_name)
-    # insert_tweet_data(tweets)
     app.run(debug=True)
