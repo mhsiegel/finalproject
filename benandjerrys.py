@@ -31,18 +31,6 @@ def make_request_using_cache(url):
         fw.close()
         return CACHE_DICTION[unique_ident]
 
-def make_tweepy_request_using_cache(url):
-    tweepycache = 'tweepycache.json'
-    try:
-        cache_file = open(tweepycache, 'r')
-        cache_contents = cache_file.read()
-        CACHE_DICTION = json.loads(cache_contents)
-        cache_file.close()
-    except:
-        CACHE_DICTION = {}
-
-
-
 class BenandJerrys:
     def __init__(self, name = "No name", ingredients = "No ingredients", desc = "No description", image = "No image", id = 0, url=None):
         self.name = name
@@ -89,7 +77,6 @@ def icecreamflavors():
     return list_of_icecreams
 
 def get_tweets():
-
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     api = tweepy.API(auth)
