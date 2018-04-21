@@ -87,14 +87,8 @@ class TestDataBase(unittest.TestCase):
 class TestTweepy(unittest.TestCase):
     def testtweepy(self):
         t1 = get_tweets()
-        # t2 = get_tweets()
-
         self.assertEqual(type(t1), list)
-        # self.assertIn(t2[0]['text'], '@benandjerrys')
 
-# class TestFlask(unittest.TestCase):
-#     db = benandjerrys.db
-#     f = db.
 
 if __name__ == '__main__':
     unittest.main()
